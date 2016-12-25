@@ -1,0 +1,3 @@
+bami_api:
+    resource: "@BamiApiBundle/Resources/config/routing.yml"
+    prefix:   /
