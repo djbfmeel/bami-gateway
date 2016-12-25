@@ -1,0 +1,3 @@
+services:
+    bami_api.controller.default:
+        class: Bami\Bundle\ApiBundle\Controller\DefaultController
