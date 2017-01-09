@@ -2,19 +2,14 @@
 
 require 'recipe/symfony3.php';
 
-set('http_user', 'bamibot');
-set('http_group', 'www-data');
+set('writable_chmod_mode', '0775');
 
-// Override writable task
-task('writable', function () {
-    run('chmod -R 775 {{writable_dir}}');
+task('deploy:owner', function() {
+    run('chown -R bamibot:www-data /home/bamibot/bamibot.onefinity.io');
 });
 
 // Set configurations
 set('repository', 'git@github.com:djbfmeel/bami-gateway.git');
-set('shared_files', []);
-set('shared_dirs', []);
-set('writable_dirs', []);
 set('writable_use_sudo', false);
 
 // Configure servers
