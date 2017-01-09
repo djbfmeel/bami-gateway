@@ -2,6 +2,14 @@
 
 require 'recipe/symfony3.php';
 
+set('http_user', 'bamibot');
+set('http_group', 'www-data');
+
+// Override writable task
+task('writable', function () {
+    run('chmod -R 775 {{writable_dir}}');
+});
+
 // Set configurations
 set('repository', 'git@github.com:djbfmeel/bami-gateway.git');
 set('shared_files', []);
