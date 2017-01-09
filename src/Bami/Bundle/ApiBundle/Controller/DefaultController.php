@@ -34,7 +34,7 @@ class DefaultController
     {
         $data = $request->request->all();
 
-        $this->logger->addDebug(json_encode($data));
+        $this->logger->info(json_encode($data));
 
         return new JsonResponse();
     }
