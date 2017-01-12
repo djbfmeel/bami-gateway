@@ -2,7 +2,9 @@
 
 namespace Bami\Bundle\ApiAiBundle\Controller;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @author Dennis van Meel <dennis.van.meel@freshheads.com>
@@ -10,10 +12,24 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class CallbackController
 {
     /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    /**
+     * @param Request $request
      * @return JsonResponse
      */
-    public function action()
+    public function action(Request $request)
     {
+        $this->logger->info(json_encode($request->query->all()));
+        $this->logger->info(json_encode($request->request->all()));
+
         return new JsonResponse($this->getMockOutput());
     }
 

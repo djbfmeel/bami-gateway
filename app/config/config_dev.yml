@@ -1,5 +1,6 @@
 imports:
-    - { resource: config.yml }
+    - { resource: 'config.yml' }
+    - { resource: 'extension/monolog_lazy.yml' }
 
 framework:
     router:
@@ -10,18 +11,4 @@ framework:
 web_profiler:
     toolbar: true
     intercept_redirects: false
-
-monolog:
-    handlers:
-        main:
-            type: stream
-            path: "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
-            channels: [!event]
-        console:
-            type:   console
-            channels: [!event, !doctrine]
-        chromephp:
-            type:   chromephp
-            level:  info
 
