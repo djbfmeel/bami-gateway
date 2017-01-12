@@ -19,3 +19,8 @@ monolog:
             level: debug
         console:
             type:  console
+
+parameters:
+    database_name:          'bamibot'
+    database_user:          'bamibot'
+    database_password:      'S!fsU9b)ubG}aiwcd,85X@e['

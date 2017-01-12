@@ -1,0 +1,3 @@
+api_ai_callback:
+    path:     /callback
+    defaults: { _controller: api_ai.controller.callback:action }

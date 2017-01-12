@@ -1,0 +1,3 @@
+services:
+    api_ai.controller.callback:
+        class: Bami\Bundle\ApiAiBundle\Controller\CallbackController

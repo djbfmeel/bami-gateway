@@ -16,6 +16,7 @@ set('writable_use_sudo', false);
 server('prod', 'onefinity.io')
     ->user('bamibot')
     ->forwardAgent()
+    ->env('branch', 'develop')
     ->env('deploy_path', '/home/bamibot/bamibot.onefinity.io');
 
 after('deploy:update_code', 'deploy:shared');

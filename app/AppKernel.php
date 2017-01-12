@@ -13,8 +13,9 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Bami\Bundle\ApiBundle\BamiApiBundle()
+            new Bami\Bundle\ApiAiBundle\ApiAiBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test', 'docker'], true)) {
