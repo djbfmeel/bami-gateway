@@ -1,7 +1,0 @@
-default:
-    path:     /
-    defaults: { _controller: bami_api.controller.default:indexAction }
-
-callback:
-    path:     /callback
-    defaults: { _controller: bami_api.controller.default:callbackAction }
