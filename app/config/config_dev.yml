@@ -12,3 +12,6 @@ web_profiler:
     toolbar: true
     intercept_redirects: false
 
+parameters:
+    database_host:          'mysql'
+    database_user:          'root'

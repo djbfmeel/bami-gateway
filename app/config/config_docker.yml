@@ -4,7 +4,3 @@ imports:
 framework:
     session:
         handler_id: ~
-
-parameters:
-    database_host:          'mysql'
-    database_user:          'root'

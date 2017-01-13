@@ -1,0 +1,38 @@
+Bami\Bundle\ApiAiBundle\Model\Log\Log:
+    type: entity
+    table: api_ai_log
+
+    id:
+        id:
+            type:           bigint
+            generator:
+                strategy:   AUTO
+            options:
+                unsigned:   true
+
+    fields:
+        createdAt:
+            type:           datetime
+        method:
+            type:           string
+            length:         10
+        url:
+            type:           string
+            length:         200
+        ip:
+            type:           string
+            length:         50
+        headers:
+            type:           json_array
+        body:
+            type:           json_array
+            nullable:       true
+        responseCode:
+            type:           integer
+            options:
+                unsigned:   true
+        responseHeaders:
+            type:           json_array
+        responseBody:
+            type:           json_array
+            nullable:       true

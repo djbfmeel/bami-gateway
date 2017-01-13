@@ -41,12 +41,15 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        mapping_types:
-            enum: string
-        server_version: 5.5
         schema_filter: '#^(?!fb__).*#'
-        unix_socket: '/tmp/mysql.sock'
+        unix_socket: '/var/mysql/mysql.sock'
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        mappings:
+            api_ai:
+                type:       'yml'
+                is_bundle:  false
+                dir:        '%kernel.root_dir%/Resources/config/doctrine/api_ai'
+                prefix:     'Bami\Bundle\ApiAiBundle\Model'
