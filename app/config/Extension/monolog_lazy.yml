@@ -1,17 +1,3 @@
-imports:
-    - { resource: 'config.yml' }
-
-#doctrine:
-#    orm:
-#        metadata_cache_driver: apc
-#        result_cache_driver: apc
-#        query_cache_driver: apc
-
-parameters:
-    database_name:          'bamibot'
-    database_user:          'bamibot'
-    database_password:      'S!fsU9b)ubG}aiwcd,85X@e['
-
 monolog:
     use_microseconds: false
     channels: [ 'api_ai' ]
@@ -20,7 +6,7 @@ monolog:
         channel_default:
             type:           'fingers_crossed'
             handler:        'channel_default_rotating_file'
-            action_level:   'error'
+            action_level:   'debug'
             channels:       [ '!api_ai', '!php' ]
             excluded_404s:
                 - ^/
@@ -36,4 +22,3 @@ monolog:
             type:           'stream'
             path:           '%kernel.logs_dir%/api_ai.log'
             channels:       [ 'api_ai' ]
-        # /Stream loggers

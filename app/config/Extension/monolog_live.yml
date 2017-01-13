@@ -1,17 +1,3 @@
-imports:
-    - { resource: 'config.yml' }
-
-#doctrine:
-#    orm:
-#        metadata_cache_driver: apc
-#        result_cache_driver: apc
-#        query_cache_driver: apc
-
-parameters:
-    database_name:          'bamibot'
-    database_user:          'bamibot'
-    database_password:      'S!fsU9b)ubG}aiwcd,85X@e['
-
 monolog:
     use_microseconds: false
     channels: [ 'api_ai' ]

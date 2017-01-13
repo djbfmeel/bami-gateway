@@ -1,0 +1,8 @@
+services:
+    api_ai.event_handler.messenger_log:
+        class: Bami\Bundle\ApiAiBundle\EventHandler\LogSubscriber
+        arguments:
+            - '@doctrine'
+            - [ 'api_ai_callback' ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.terminate, method: onTerminate }

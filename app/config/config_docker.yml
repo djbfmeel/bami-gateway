@@ -1,10 +1,6 @@
 imports:
-    - { resource: config_dev.yml }
+    - { resource: 'config_dev.yml' }
 
 framework:
     session:
         handler_id: ~
-
-parameters:
-    database_host:          'mysql'
-    database_user:          'root'

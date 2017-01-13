@@ -17,5 +17,6 @@ class ApiAiExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
         $loader->load('controller.yml');
+        $loader->load('event_handler.yml');
     }
 }
